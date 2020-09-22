@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { NavbarComponent } from './components/inicio/partials/navbar/navbar.component';
+import { FooterComponent } from './components/inicio/partials/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicioComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
