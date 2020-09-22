@@ -12,6 +12,7 @@ import { FooterComponent } from "./components/inicio/partials/footer/footer.comp
 
 // RUTAS
 import { APP_ROUTES } from "./routes/routes";
+import { LoginComponent } from './components/sw/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { APP_ROUTES } from "./routes/routes";
     InicioComponent,
     NavbarComponent,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
