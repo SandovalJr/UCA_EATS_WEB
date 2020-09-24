@@ -24,9 +24,6 @@ module.exports = db.sequelize.define(
     password: {
       type: Sequelize.STRING,
     },
-    status: {
-      type: Sequelize.STRING,
-    },
     UserType: {
       type: Sequelize.STRING,
     },
