@@ -5,19 +5,18 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const User_Detail = require("../models/User_Detail");
 users_details.use(cors());
+const bcrypt = require("bcryptjs");
 
 process.env.SECRET_KEY = "secret";
 
-
 users_details.get("/", (req, res) => {
-    res.json({ status: "API WORKS" });
-  });
+  res.json({ status: "API WORKS" });
+});
 
-  
 // REGISTRO
 users_details.post("/registerUser", (req, res) => {
   const today = new Date();
-  res.send(console.log(req.body));
+
   const userData = {
     username: req.body.username,
     first_name: req.body.first_name,
@@ -28,6 +27,11 @@ users_details.post("/registerUser", (req, res) => {
     phone: req.body.phone,
     created: today,
   };
+
+  // Encriptar contraseña
+  const salt = bcrypt.genSaltSync();
+  userData.password = bcrypt.hashSync(userData.password, salt);
+  // res.send(console.log(userData));
   User_Detail.findOne({
     where: {
       username: req.body.username,
@@ -57,10 +61,6 @@ users_details.post("/registerUser", (req, res) => {
       res.send("error: " + err);
     });
 });
-
-
-
-
 
 // LOGIN
 users_details.post("/login", (req, res) => {
