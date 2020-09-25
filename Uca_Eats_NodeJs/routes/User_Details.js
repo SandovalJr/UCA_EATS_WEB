@@ -17,8 +17,7 @@ users_details.get("/", (req, res) => {
 // REGISTRO
 users_details.post("/registerUser", (req, res) => {
   const today = new Date();
-
-  //res.send(console.log(req.body));
+  res.send(console.log(req.body));
   const userData = {
     username: req.body.username,
     first_name: req.body.first_name,
@@ -37,7 +36,7 @@ users_details.post("/registerUser", (req, res) => {
     //TODO bcrypt
     .then((user) => {
       if (!user) {
-        User.create(userData)
+        User_Detail.create(userData)
           .then((user) => {
             let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
               expiresIn: 1440,
@@ -58,6 +57,10 @@ users_details.post("/registerUser", (req, res) => {
       res.send("error: " + err);
     });
 });
+
+
+
+
 
 // LOGIN
 users_details.post("/login", (req, res) => {
