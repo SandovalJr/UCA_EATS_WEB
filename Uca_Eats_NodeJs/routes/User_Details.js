@@ -65,14 +65,26 @@ users_details.post("/registerUser", (req, res) => {
 // LOGIN
 users_details.post("/login", (req, res) => {
   console.log("works");
+
   User_Detail.findOne({
     where: {
       username: req.body.username,
-      password: req.body.password,
     },
   })
     .then((user) => {
       if (user) {
+        // Compara passwords encriptadas
+        const validarPassword = bcrypt.compareSync(
+          req.body.password,
+          user.password
+        );
+        if (!validarPassword) {
+          return res.status(400).json({
+            ok: false,
+            message: "Contraseña no valida",
+          });
+        }
+        // console.log(user);
         let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
           expiresIn: 1440,
         });
