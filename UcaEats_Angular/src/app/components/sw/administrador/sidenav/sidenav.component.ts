@@ -15,7 +15,7 @@ export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
 
   fillerNav = [
-    { name: "Inicio", route: "/Inicio_Administrador", icon: "home" },
+    { name: "Inicio", route: "/Inicio_Administrador/Menu_Inicio_Admin", icon: "home" },
     {
       // name: "Usuarios",
       // route: "/AdminProfile/ListaUsuarios",

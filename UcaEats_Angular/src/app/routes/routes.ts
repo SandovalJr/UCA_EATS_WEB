@@ -11,7 +11,7 @@ import { LoginComponent } from "../components/sw/login/login.component";
 
 // Administrador
 import { AdministradorComponent } from "../components/sw/administrador/administrador.component";
-
+import { MenuInicioAdminComponent } from "../components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
 // Cliente
 import { ClienteComponent } from "../components/sw/cliente/cliente.component";
 
@@ -30,6 +30,13 @@ const routes: Routes = [
     path: "Inicio_Administrador",
     component: AdministradorComponent,
     canActivate: [AuthGuardService],
+    children: [
+      {
+        path: "Menu_Inicio_Admin",
+        component: MenuInicioAdminComponent,
+        canActivate: [AuthGuardService],
+      },
+    ],
   },
 ];
 

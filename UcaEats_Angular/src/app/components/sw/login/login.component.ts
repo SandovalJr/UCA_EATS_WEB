@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.login(this.credentials).subscribe(
       () => {
-        this.router.navigateByUrl("/Inicio_Administrador");
+        this.router.navigateByUrl("/Inicio_Administrador/Menu_Inicio_Admin");
         console.log(this.auth.IsAdmin());
       },
       (err) => {

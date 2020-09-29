@@ -41,6 +41,7 @@ import { SidenavComponent } from "./components/sw/administrador/sidenav/sidenav.
 
 // CLIENTE
 import { ClienteComponent } from "./components/sw/cliente/cliente.component";
+import { MenuInicioAdminComponent } from './components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ClienteComponent } from "./components/sw/cliente/cliente.component";
     AdministradorComponent,
     ClienteComponent,
     SidenavComponent,
+    MenuInicioAdminComponent,
   ],
   imports: [
     BrowserModule,
