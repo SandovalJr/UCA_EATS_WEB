@@ -120,4 +120,18 @@ users_details.get("/profile", (req, res) => {
     });
 });
 
+users_details.get("/ListaUsuarios", (req, res) => {
+  User_Detail.findAll({
+    where: {
+      UserType: "cliente",
+    },
+  })
+    .then(function (autos) {
+      res.status(200).json(autos);
+    })
+    .catch(function (error) {
+      res.status(500).json(error);
+    });
+});
+
 module.exports = users_details;
