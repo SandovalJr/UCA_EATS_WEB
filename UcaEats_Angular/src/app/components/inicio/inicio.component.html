@@ -1,31 +1,245 @@
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
+
     <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+      <header class="header">
+        <div id="centrarlogoinicio">
+          <a href="index.html" class="logo">
+            <img src="../../../assets/img/img_inicio/icons/ucameals2.jpeg" alt="logo"/>
+          </a>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
+        <input
+          type="text"
+          class="input input-address"
+          placeholder="¿Que deseas comer?"
+        />
+        <div class="buttons" id="botonesMenuCentrar">
+
+          <button class="button" id="location-button">
+            <img
+              src="../../../assets/img/img_inicio/icons/location.svg"
+              alt="shopping-cart"
+              class="button-icon"
+            />
+            <span class="button-text"> Ubicacion Actual</span>
+          </button>
+
+          <button class="button" id="pedidoboton" data-toggle="modal" data-target="#myModal">
+            <img
+              src="../../../assets/img/img_inicio/icons/shopping-card-withe.svg"
+              alt="shopping-cart"
+              class="button-icon"
+            />
+            <span class="button-text">Pedido</span>
+          </button>
+
+          <button class="button button-primary2" id="BtnInit">
+            <img src="../../../assets/img/img_inicio/icons/user.svg" alt="user" class="button-icon" />
+            <span class="button-text">Iniciar Sesion</span>
+          </button>
         </div>
+      </header>
+    </div>
+    <!--div class="conteiner"-->
+    <main class="main">
+
+        <div class="container">
+          <mdb-carousel [animation]="'slide'">
+            <mdb-carousel-item>
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide">
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide">
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third slide">
+            </mdb-carousel-item>
+          </mdb-carousel>
+
+        <br>
+        <section class="restaurants">
+          <div class="section-heading">
+            <h2 class="section-title wow fadeInLeft" data-wow-delay="0.2s">¡Tus Platillos Favoritos!</h2>
+
+          </div>
+          <div class="cards">
+            <a href="ensaladas.html" class="card wow zoomIn" data-wow-delay="0.2s">
+              <img src="../../../assets/img/img_inicio/restaurants/ensalada.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Ensaladas</h3>
+                  <span class="card-tag tag">Lista en 20 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+            <a href="sandwiches.html" class="card wow zoomIn" data-wow-delay="0.4s">
+              <img src="../../../assets/img/img_inicio/restaurants/sandwich.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Sandwiches</h3>
+                  <span class="card-tag tag">Listo en 20 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+            <a href="pasta.html" class="card wow zoomIn" data-wow-delay="0.6s">
+              <img src="../../../assets/img/img_inicio/restaurants/pollo.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Pastas</h3>
+                  <span class="card-tag tag">Listo en 45 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+            <a href="restaurant4.html" class="card wow zoomIn" data-wow-delay="0.2s">
+              <img src="../../../assets/img/img_inicio/restaurants/lighter.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Platillos Lijeros</h3>
+                  <span class="card-tag tag">Listo en 30 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+            <a href="restaurant5 .html" class="card wow zoomIn" data-wow-delay="0.4s">
+              <img src="../../../assets/img/img_inicio/restaurants/alitas.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Wings</h3>
+                  <span class="card-tag tag">Listas en 25 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+            <a href="restaurant6.html" class="card wow zoomIn" data-wow-delay="0.6s">
+              <img src="../../../assets/img/img_inicio/restaurants/costillas.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Costillas</h3>
+                  <span class="card-tag tag">Listas en 30 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <a href="restaurant6.html" class="card wow zoomIn" data-wow-delay="0.6s">
+              <img src="../../../assets/img/img_inicio/restaurants/burger.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Hamburguesas</h3>
+                  <span class="card-tag tag">Listas en 15 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <a href="restaurant6.html" class="card wow zoomIn" data-wow-delay="0.6s">
+              <img src="../../../assets/img/img_inicio/restaurants/postre.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Postres</h3>
+                  <span class="card-tag tag">Listos en 10 min</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <a href="restaurant6.html" class="card wow zoomIn" data-wow-delay="0.6s">
+              <img src="../../../assets/img/img_inicio/restaurants/bebidas.jpg" alt="image" class="card-image">
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title">Bebidas</h3>
+                  <span class="card-tag tag">Al instante</span>
+                </div>
+                <!-- /.card-heading -->
+                <div class="card-info">
+
+                </div>
+                <!-- /.card-info -->
+              </div>
+              <!-- /.card-text -->
+            </a>
+            <!-- /.card -->
+          </div>
+          <!-- /.cards -->
+        </section>
+
       </div>
+
+      <!-- /.conteiner -->
+    </main>
+
+
+    <app-footer></app-footer>
+    <div class="modal" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-header">
+
+            <h4 class="modal-title">Resumen de pedido</h4>
+          </div>
+          <div class="modal-body">
+            <div class="food-row">
+                <span class="food-name">Рizza Peperonni</span>
+                <strong class="food-price">$120</strong>
+                <div class="food-counter">
+                  <button class="counter-button">-</button>
+                  <span class="counter">1</span>
+                  <button class="counter-button">+</button>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <span class="modal-pricetag">Total: $120</span>
+            <div class="footer-buttons">
+
+            </div>
+            <button class="modal-pricetag-pay">Ordenar</button>
+          </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-        <strong>Album</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+
+
