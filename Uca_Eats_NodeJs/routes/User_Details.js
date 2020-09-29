@@ -120,6 +120,7 @@ users_details.get("/profile", (req, res) => {
     });
 });
 
+// Listar todos los clientes
 users_details.get("/ListaUsuarios", (req, res) => {
   User_Detail.findAll({
     where: {
@@ -128,6 +129,21 @@ users_details.get("/ListaUsuarios", (req, res) => {
   })
     .then(function (autos) {
       res.status(200).json(autos);
+    })
+    .catch(function (error) {
+      res.status(500).json(error);
+    });
+});
+
+// Eliminar un cliente
+users_details.get("/EliminarUsuario/:user_id", (req, res) => {
+  User_Detail.destroy({
+    where: {
+      user_id: req.params.user_id,
+    },
+  })
+    .then(function (eliminado) {
+      res.status(200).json(eliminado);
     })
     .catch(function (error) {
       res.status(500).json(error);
