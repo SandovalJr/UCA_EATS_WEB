@@ -13,6 +13,8 @@ import { FooterComponent } from "./components/inicio/partials/footer/footer.comp
 // RUTAS
 import { APP_ROUTES } from "./routes/routes";
 import { LoginComponent } from './components/sw/login/login.component';
+import { AdministradorComponent } from './components/sw/administrador/administrador.component';
+import { ClienteComponent } from './components/sw/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { LoginComponent } from './components/sw/login/login.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
+    AdministradorComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,
