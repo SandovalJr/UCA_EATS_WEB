@@ -150,4 +150,19 @@ users_details.get("/EliminarUsuario/:user_id", (req, res) => {
     });
 });
 
+// Regresar informacion del cliente por id
+users_details.get("/UserInformation_ID/:user_id", (req, res) => {
+  User_Detail.findOne({
+    where: {
+      user_id: req.params.user_id,
+    },
+  })
+    .then(function (userData) {
+      res.status(200).json(userData);
+    })
+    .catch(function (error) {
+      res.status(500).json(error);
+    });
+});
+
 module.exports = users_details;
