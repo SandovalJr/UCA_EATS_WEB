@@ -36,7 +36,7 @@ export interface TokenPayload {
 @Injectable()
 export class AuthenticationService {
   private token: string;
-  baseUrl = "http://localhost:3000";
+  baseUrl = "http://localhost:3000/api/user_detail/";
 
   constructor(private http: HttpClient, private router: Router) {}
   private saveToken(token: string): void {
@@ -93,7 +93,7 @@ export class AuthenticationService {
 
   // LOGIN
   public login(user: TokenPayload): Observable<any> {
-    const base = this.http.post(this.baseUrl + `/api/user/login`, user);
+    const base = this.http.post(this.baseUrl + `login`, user);
 
     console.log(base);
     const request = base.pipe(
@@ -115,6 +115,4 @@ export class AuthenticationService {
     window.localStorage.removeItem("usertoken");
     this.router.navigateByUrl("/");
   }
-
-
 }

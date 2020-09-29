@@ -19,13 +19,19 @@ export class AuthGuardService implements CanActivate {
       return false;
     }
 
-    if (route.url[0].path === "AdminProfile" && this.auth.IsAdmin() === 0) {
+    if (
+      route.url[0].path === "Inicio_Administrador" &&
+      this.auth.IsAdmin() === 0
+    ) {
       return true;
     }
 
-    if (route.url[0].path === "AdminProfile" && this.auth.IsAdmin() === 7) {
+    if (
+      route.url[0].path === "Inicio_Administrador" &&
+      this.auth.IsAdmin() === 7
+    ) {
       if (this.auth.IsCliente() === 2) {
-        this.router.navigateByUrl("/SupervisorProfile/Inicio_Supervisor");
+        this.router.navigateByUrl("Inicio_Cliente");
       } else {
         this.router.navigateByUrl("/loginError");
       }

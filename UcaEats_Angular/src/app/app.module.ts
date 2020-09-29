@@ -1,6 +1,17 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+
+// RX
+import { ReactiveFormsModule } from "@angular/forms"; // <-- #1 import module
+import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators"; // <-- #2 import module
+
+// SERVICIOS
+import { AuthGuardService } from "../services/auth-guard.service";
+import { AuthenticationService } from "../services/authentication.service";
+import { MessageErrorsService } from "../services/messageError.service";
 
 import { AppComponent } from "./app.component";
 
@@ -12,9 +23,13 @@ import { FooterComponent } from "./components/inicio/partials/footer/footer.comp
 
 // RUTAS
 import { APP_ROUTES } from "./routes/routes";
-import { LoginComponent } from './components/sw/login/login.component';
-import { AdministradorComponent } from './components/sw/administrador/administrador.component';
-import { ClienteComponent } from './components/sw/cliente/cliente.component';
+import { LoginComponent } from "./components/sw/login/login.component";
+
+// ADMIN
+import { AdministradorComponent } from "./components/sw/administrador/administrador.component";
+
+// CLIENTE
+import { ClienteComponent } from "./components/sw/cliente/cliente.component";
 
 @NgModule({
   declarations: [
@@ -32,8 +47,11 @@ import { ClienteComponent } from './components/sw/cliente/cliente.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     APP_ROUTES,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule,
   ],
-  providers: [],
+  providers: [MessageErrorsService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
