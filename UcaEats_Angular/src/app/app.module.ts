@@ -8,6 +8,16 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms"; // <-- #1 import module
 import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators"; // <-- #2 import module
 
+// ANGULAR MATERIAL
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+// import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatMenuModule } from "@angular/material/menu";
+import { MatListModule } from "@angular/material/list";
+
 // SERVICIOS
 import { AuthGuardService } from "../services/auth-guard.service";
 import { AuthenticationService } from "../services/authentication.service";
@@ -27,6 +37,7 @@ import { LoginComponent } from "./components/sw/login/login.component";
 
 // ADMIN
 import { AdministradorComponent } from "./components/sw/administrador/administrador.component";
+import { SidenavComponent } from "./components/sw/administrador/sidenav/sidenav.component";
 
 // CLIENTE
 import { ClienteComponent } from "./components/sw/cliente/cliente.component";
@@ -40,6 +51,7 @@ import { ClienteComponent } from "./components/sw/cliente/cliente.component";
     LoginComponent,
     AdministradorComponent,
     ClienteComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +62,16 @@ import { ClienteComponent } from "./components/sw/cliente/cliente.component";
     HttpClientModule,
     ReactiveFormsModule,
     RxReactiveFormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonModule,
+    MatIconModule,
+    // FlexLayoutModule,
+    MatListModule,
+    MatMenuModule,
   ],
   providers: [MessageErrorsService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent],

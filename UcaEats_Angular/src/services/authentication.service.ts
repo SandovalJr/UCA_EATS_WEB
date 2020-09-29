@@ -43,6 +43,13 @@ export class AuthenticationService {
     localStorage.setItem("usertoken", token);
     this.token = token;
   }
+  // PERFIL INFORMACION
+  public profile(): Observable<any> {
+    // console.log(this.getToken());
+    return this.http.get(this.baseUrl + `profile`, {
+      headers: { Authorization: ` ${this.getToken()}` },
+    });
+  }
 
   private getToken(): string {
     if (!this.token) {
