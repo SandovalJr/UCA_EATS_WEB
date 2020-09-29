@@ -134,13 +134,13 @@ button {
   outline: none !important;
   border: none;
   background: transparent;
-  border-left: 1px #139ABE solid;
-  border-right: 1px #139ABE solid;
+  border-left: 1px #139abe solid;
+  border-right: 1px #139abe solid;
 }
 
 button:hover {
   cursor: pointer;
-  background: #139ABE;
+  background: #139abe;
 }
 
 .login100-form-btn:hover {
@@ -365,7 +365,7 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  border: 1px #139ABE solid;
+  border: 1px #139abe solid;
   top: 0;
   left: -100%;
 }
@@ -8026,4 +8026,11 @@ iframe {
     opacity: 0.9;
     background: #bd8af4;
   }
+}
+
+.registrateStyle{
+  margin-top: 5px;
+}
+.registrateStyle:hover {
+  color: #202345;
 }
