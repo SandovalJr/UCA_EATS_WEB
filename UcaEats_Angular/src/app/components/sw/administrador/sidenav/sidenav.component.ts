@@ -17,9 +17,9 @@ export class SidenavComponent implements OnInit {
   fillerNav = [
     { name: "Inicio", route: "/Inicio_Administrador/Menu_Inicio_Admin", icon: "home" },
     {
-      // name: "Usuarios",
-      // route: "/AdminProfile/ListaUsuarios",
-      // icon: "supervised_user_circle",
+      name: "Usuarios",
+      route: "/Inicio_Administrador/Usuarios",
+      icon: "supervised_user_circle",
     },
   ];
 

@@ -12,6 +12,7 @@ import { LoginComponent } from "../components/sw/login/login.component";
 // Administrador
 import { AdministradorComponent } from "../components/sw/administrador/administrador.component";
 import { MenuInicioAdminComponent } from "../components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
+import { UsuariosComponent } from "../components/sw/administrador/funciones/usuarios/usuarios.component";
 // Cliente
 import { ClienteComponent } from "../components/sw/cliente/cliente.component";
 
@@ -34,6 +35,11 @@ const routes: Routes = [
       {
         path: "Menu_Inicio_Admin",
         component: MenuInicioAdminComponent,
+        canActivate: [AuthGuardService],
+      },
+      {
+        path: "Usuarios",
+        component: UsuariosComponent,
         canActivate: [AuthGuardService],
       },
     ],
