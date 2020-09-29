@@ -8,6 +8,7 @@ import { AuthGuardService } from "../../services/auth-guard.service";
 import { InicioComponent } from "../components/inicio/inicio.component";
 // LogIn
 import { LoginComponent } from "../components/sw/login/login.component";
+import { RegisterComponent } from "../components/sw/register/register.component";
 
 // Administrador
 import { AdministradorComponent } from "../components/sw/administrador/administrador.component";
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "LogIn_UcaMeals",
     component: LoginComponent,
+  },
+  {
+    path: "Registrate",
+    component: RegisterComponent,
   },
   {
     path: "Inicio_Cliente",
