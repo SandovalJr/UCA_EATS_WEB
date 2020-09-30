@@ -81,4 +81,8 @@ export class RegisterComponent implements OnInit {
       this.formulario.controls[control].errors
     );
   }
+
+  public AddUser() {
+    console.log(this.credentials);
+  }
 }

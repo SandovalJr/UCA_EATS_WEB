@@ -122,4 +122,14 @@ export class AuthenticationService {
     window.localStorage.removeItem("usertoken");
     this.router.navigateByUrl("/");
   }
+
+  // OPERACIONES BASICAS ADD , DELETE Y UPDATE
+
+  // REGISTRAR USUARIO
+  public register(user: TokenPayload): Observable<any> {
+    console.log(user);
+    return this.http.post(`registerUser`, user);
+  }
+
+
 }
