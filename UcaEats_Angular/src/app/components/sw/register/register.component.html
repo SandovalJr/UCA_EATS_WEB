@@ -1,1 +1,143 @@
-<p>register works!</p>
+<div class="container mt-5">
+  <div class="jumbotron">
+    <form>
+      <ng-form [formGroup]="formulario">
+        <!-- Nombre y Apellido -->
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nombre"
+              name="first_name"
+              formControlName="first_name"
+              [(ngModel)]="credentials.first_name"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('first_name').error == false,
+                'is-invalid': ValidarFormulario('first_name').error == true
+              }"
+            />
+            <div
+              *ngIf="ValidarFormulario('first_name').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("first_name").message }}
+            </div>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Apellido"
+              name="last_name"
+              formControlName="last_name"
+              [(ngModel)]="credentials.last_name"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('last_name').error == false,
+                'is-invalid': ValidarFormulario('last_name').error == true
+              }"
+            />
+            <div
+              *ngIf="ValidarFormulario('last_name').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("last_name").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Usuario y genero -->
+        <div class="row mt-2">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Usuario"
+              name="username"
+              formControlName="username"
+              [(ngModel)]="credentials.username"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('username').error == false,
+                'is-invalid': ValidarFormulario('username').error == true
+              }"
+            />
+            <div
+              *ngIf="ValidarFormulario('username').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("username").message }}
+            </div>
+          </div>
+          <div class="col">
+            <select
+              name="gender"
+              formControlName="gender"
+              [(ngModel)]="credentials.gender"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('gender').error == false,
+                'is-invalid': ValidarFormulario('gender').error == true
+              }"
+              class="form-control"
+            >
+              <option [value]="">Selecciona una opcion</option>
+              <option [value]="'M'">Mujer</option>
+              <option [value]="'H'">Hombre</option>
+            </select>
+            <div
+              *ngIf="ValidarFormulario('gender').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("gender").message }}
+            </div>
+          </div>
+        </div>
+        <!-- Usuario y genero -->
+        <div class="row mt-2">
+          <div class="col">
+            <input
+              name="password"
+              formControlName="password"
+              [(ngModel)]="credentials.password"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('password').error == false,
+                'is-invalid': ValidarFormulario('password').error == true
+              }"
+              type="password"
+              class="form-control"
+              placeholder="Contraseña"
+            />
+            <div
+              *ngIf="ValidarFormulario('password').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("password").message }}
+            </div>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              name="phone"
+              formControlName="phone"
+              [(ngModel)]="credentials.phone"
+              [ngClass]="{
+                'is-valid': ValidarFormulario('phone').error == false,
+                'is-invalid': ValidarFormulario('phone').error == true
+              }"
+              class="form-control"
+              placeholder="Telefono"
+            />
+            <div
+              *ngIf="ValidarFormulario('phone').error"
+              class="text-center invalid-feedback d-block"
+            >
+              {{ ValidarFormulario("phone").message }}
+            </div>
+          </div>
+        </div>
+      </ng-form>
+      <!-- btn -->
+      <div class="centrarBtn">
+        <button class="btn btn-outline-info btn-block">Registrarse</button>
+      </div>
+    </form>
+  </div>
+</div>
