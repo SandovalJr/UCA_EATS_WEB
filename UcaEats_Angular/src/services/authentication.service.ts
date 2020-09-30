@@ -127,9 +127,7 @@ export class AuthenticationService {
 
   // REGISTRAR USUARIO
   public register(user: TokenPayload): Observable<any> {
-    console.log(user);
-    return this.http.post(`registerUser`, user);
+    // console.log(user);
+    return this.http.post(`${this.baseUrl}registerUser`, user);
   }
-
-
 }
