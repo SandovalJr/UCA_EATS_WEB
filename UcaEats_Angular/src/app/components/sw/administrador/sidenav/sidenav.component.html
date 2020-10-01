@@ -58,7 +58,12 @@
       fixedTopGap="56"
     >
       <mat-nav-list>
-        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav" class="BtnSideNav">
+        <a
+          mat-list-item
+          [routerLink]="nav.route"
+          *ngFor="let nav of fillerNav"
+          class="BtnSideNav"
+        >
           <mat-icon class="icono">{{ nav.icon }}</mat-icon>
           {{ nav.name }}</a
         >
@@ -84,7 +89,7 @@
           <span> Platillos</span>
         </a>
 
-        <a mat-list-item class="BtnSideNav">
+        <a mat-list-item class="BtnSideNav" routerLink="Usuarios">
           <mdb-icon class="iconoMdb" fas icon="users"></mdb-icon>
           <span>Clientes</span>
         </a>
