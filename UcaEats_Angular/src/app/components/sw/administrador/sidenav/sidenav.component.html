@@ -63,54 +63,36 @@
           {{ nav.name }}</a
         >
 
+        <a mat-list-item class="BtnSideNav">
+          <mdb-icon class="iconoMdb" fas icon="folder-open"></mdb-icon>
+          <br />
+          <span>Menu actual</span>
+        </a>
 
-<a
-mat-list-item
->
-  <mdb-icon class="icono" fas icon="folder-open"></mdb-icon>
-  <br>
-  <span>Menu actual</span>
-</a>
+        <a mat-list-item>
+          <mdb-icon class="iconoMdb" fas icon="receipt"></mdb-icon>
+          <span> Recibos</span>
+        </a>
 
+        <a mat-list-item>
+          <mdb-icon class="iconoMdb" fas icon="clipboard-list"></mdb-icon>
+          <span> Categorias</span>
+        </a>
 
+        <a mat-list-item>
+          <mdb-icon class="iconoMdb" fas icon="utensils"></mdb-icon>
+          <span> Platillos</span>
+        </a>
 
- <a
- mat-list-item
- >
-  <mdb-icon  class="icono" fas icon="receipt"></mdb-icon>
-  <span> Recibos</span>
- </a> 
- 
- 
- <a
- mat-list-item
- >
- <mdb-icon class= "icono" fas icon="clipboard-list"></mdb-icon>
-  <span> Categorias</span>
- </a>   
+        <a mat-list-item>
+          <mdb-icon class="iconoMdb" fas icon="users"></mdb-icon>
+          <span>Clientes</span>
+        </a>
 
- <a
- mat-list-item
- >
- <mdb-icon class="icono" fas icon="utensils"></mdb-icon>
-  <span> Platillos</span>
- </a>   
-
- <a
- mat-list-item
- >
- <mdb-icon class= "icono" fas icon="users"></mdb-icon>
-  <span>Clientes</span>
- </a>  
-
- <a
- mat-list-item
- >
- <mdb-icon class= "icono" fas icon="cogs"></mdb-icon>
-  <span>Configuracion</span>
- </a>  
-
-
+        <a mat-list-item>
+          <mdb-icon class="iconoMdb" fas icon="cogs"></mdb-icon>
+          <span>Configuracion</span>
+        </a>
 
         <!-- LogOut -->
         <a
@@ -119,8 +101,7 @@ mat-list-item
           routerLink="Home"
           (click)="auths.logout()"
         >
-        
-          <mat-icon class="icono">logout </mat-icon>
+          <mat-icon class="iconoMdb">logout </mat-icon>
           <span>Log Out</span>
         </a>
       </mat-nav-list>
