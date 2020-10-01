@@ -1,20 +1,27 @@
 .ta {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  color: #00034E ;
+  color: #00034e;
   margin-top: 20px;
   font-weight: bold;
   font-size: 30px;
 }
 
-.sepT{
+.sepT {
   margin-top: 50px;
 }
 
-.al{
-  border: 1px solid #00034E;
+.sepT:hover {
+  h4 {
+    color: #139abe;
+  }
+}
+
+.asb {
   border-radius: 50px;
 }
-.asb{
-  border-radius: 50px;
+
+.TBtn {
+  text-align: center;
 }
+
