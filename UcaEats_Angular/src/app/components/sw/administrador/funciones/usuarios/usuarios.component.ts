@@ -41,8 +41,8 @@ export class UsuariosComponent implements OnInit {
 
     this.auth.ListarClientes().subscribe(
       (usuarios) => {
-        this.UsuariosListados.push(usuarios);
         console.log(usuarios);
+        this.UsuariosListados = usuarios;
       },
       (err) => {
         Swal.fire({
