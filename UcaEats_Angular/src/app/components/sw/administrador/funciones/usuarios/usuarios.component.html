@@ -23,7 +23,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let users_list of UsuariosListados | filter: term">
+        <tr
+          *ngFor="
+            let users_list of UsuariosListados
+              | filter: term
+              | paginate: { itemsPerPage: 10, currentPage: pageActual }
+          "
+        >
           <td>{{ users_list.username }}</td>
           <td>{{ users_list.first_name }}</td>
           <td>{{ users_list.laste_name }}</td>
@@ -43,5 +49,13 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="mt-4 float-right">
+      <pagination-controls
+        (pageChange)="pageActual = $event"
+        previousLabel="Anterior"
+        nextLabel="Siguiente"
+      ></pagination-controls>
+    </div>
   </div>
 </div>
