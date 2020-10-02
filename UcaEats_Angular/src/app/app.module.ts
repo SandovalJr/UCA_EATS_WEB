@@ -4,6 +4,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 
+// Buscador
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+
+// Paginador
+import { NgxPaginationModule } from "ngx-pagination";
+
 // RX
 import { ReactiveFormsModule } from "@angular/forms"; // <-- #1 import module
 import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators"; // <-- #2 import module
@@ -41,9 +47,9 @@ import { SidenavComponent } from "./components/sw/administrador/sidenav/sidenav.
 
 // CLIENTE
 import { ClienteComponent } from "./components/sw/cliente/cliente.component";
-import { MenuInicioAdminComponent } from './components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component';
-import { UsuariosComponent } from './components/sw/administrador/funciones/usuarios/usuarios.component';
-import { RegisterComponent } from './components/sw/register/register.component';
+import { MenuInicioAdminComponent } from "./components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
+import { UsuariosComponent } from "./components/sw/administrador/funciones/usuarios/usuarios.component";
+import { RegisterComponent } from "./components/sw/register/register.component";
 
 @NgModule({
   declarations: [
@@ -78,6 +84,8 @@ import { RegisterComponent } from './components/sw/register/register.component';
     // FlexLayoutModule,
     MatListModule,
     MatMenuModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
   ],
   providers: [MessageErrorsService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent],

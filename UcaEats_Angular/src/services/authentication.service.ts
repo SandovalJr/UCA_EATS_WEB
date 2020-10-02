@@ -130,4 +130,15 @@ export class AuthenticationService {
     // console.log(user);
     return this.http.post(`${this.baseUrl}registerUser`, user);
   }
+
+  // Listar Usuarios
+  public ListarClientes() {
+    return this.http.get(`${this.baseUrl}ListaUsuarios`, {
+      headers: { Authorization: ` ${this.getToken()}` },
+    });
+  }
+
+
+
+
 }
