@@ -50,6 +50,7 @@ import { ClienteComponent } from "./components/sw/cliente/cliente.component";
 import { MenuInicioAdminComponent } from "./components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
 import { UsuariosComponent } from "./components/sw/administrador/funciones/usuarios/usuarios.component";
 import { RegisterComponent } from "./components/sw/register/register.component";
+import { ListarDireccionesComponent } from './components/sw/administrador/funciones/usuarios/listar-direcciones/listar-direcciones.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { RegisterComponent } from "./components/sw/register/register.component";
     MenuInicioAdminComponent,
     UsuariosComponent,
     RegisterComponent,
+    ListarDireccionesComponent,
   ],
   imports: [
     BrowserModule,
