@@ -32,7 +32,7 @@ export class UsuariosComponent implements OnInit {
     this.getUsers();
   }
 
-  public UsuariosListados: Array<any> = [];
+  public UsuariosListados;
 
   ngOnInit(): void {}
 
