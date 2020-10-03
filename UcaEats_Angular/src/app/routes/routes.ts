@@ -14,6 +14,8 @@ import { RegisterComponent } from "../components/sw/register/register.component"
 import { AdministradorComponent } from "../components/sw/administrador/administrador.component";
 import { MenuInicioAdminComponent } from "../components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
 import { UsuariosComponent } from "../components/sw/administrador/funciones/usuarios/usuarios.component";
+import { CategoriasComponent } from "../components/sw/administrador/funciones/categorias/categorias.component";
+
 // Cliente
 import { ClienteComponent } from "../components/sw/cliente/cliente.component";
 
@@ -47,7 +49,13 @@ const routes: Routes = [
         component: UsuariosComponent,
         canActivate: [AuthGuardService],
       },
+      {
+        path: "Categorias",
+        component: CategoriasComponent,
+        canActivate: [AuthGuardService],
+      },
     ],
+
   },
 ];
 
