@@ -1,15 +1,27 @@
 <div class="container mt-5">
   <div class="jumbotron">
-    <h2 class="text-center">Usuarios</h2>
-    <input
-      [(ngModel)]="term"
-      class="form-control form-control-sm ml-3 mt-5"
-      type="text"
-      placeholder="Buscar"
-      aria-describedby="helpId"
-      aria-label="Search"
-      mdbInput
-    />
+    <h2 class="text-left">Clientes registrados</h2>
+
+
+    <div class="form-inline md-form form-sm centrar">
+      <span class="iconColor">
+        <mdb-icon
+          fas
+          icon="search"
+          style="color: white;"
+          aria-hidden="true"
+        ></mdb-icon>
+      </span>
+      <input
+        [(ngModel)]="term"
+        class="form-control form-control-sm ml-3 w-75"
+        type="text"
+        placeholder="Buscar"
+        aria-describedby="helpId"
+        aria-label="Search"
+        mdbInput
+      />
+    </div>
 
     <table class="table table-hover mt-5">
       <thead>
