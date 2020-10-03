@@ -12,7 +12,7 @@
         <mdb-icon
           fas
           icon="search"
-          style="color: white;"
+          style="color: white"
           aria-hidden="true"
         ></mdb-icon>
       </span>
@@ -30,12 +30,12 @@
     <table class="table table-hover mt-5">
       <thead>
         <tr>
-          <th class= "bgt" scope="col">Usuario</th>
-          <th class= "bgt" scope="col">Nombre</th>
-          <th class= "bgt" scope="col">Apellido</th>
-          <th class= "bgt" scope="col">Genero</th>
-          <th class= "bgt" scope="col">Telefono</th>
-          <th class= "bgt" scope="col">Operaciones</th>
+          <th class="bgt" scope="col">Usuario</th>
+          <th class="bgt" scope="col">Nombre</th>
+          <th class="bgt" scope="col">Apellido</th>
+          <th class="bgt" scope="col">Genero</th>
+          <th class="bgt" scope="col">Telefono</th>
+          <th class="bgt" scope="col">Operaciones</th>
         </tr>
       </thead>
       <tbody>
@@ -46,11 +46,11 @@
               | paginate: { itemsPerPage: 10, currentPage: pageActual }
           "
         >
-          <td>{{ users_list.username }}</td>
-          <td>{{ users_list.first_name }}</td>
-          <td>{{ users_list.laste_name }}</td>
-          <td>{{ users_list.gender }}</td>
-          <td>{{ users_list.phone }}</td>
+          <td class="cr">{{ users_list.username }}</td>
+          <td class="cr">{{ users_list.first_name }}</td>
+          <td class="cr">{{ users_list.laste_name }}</td>
+          <td class="cr">{{ users_list.gender }}</td>
+          <td class="cr">{{ users_list.phone }}</td>
           <td class="centrarbtn">
             <button class="btn btn-outline-danger mr-2">
               <mat-icon>delete_forever</mat-icon>
