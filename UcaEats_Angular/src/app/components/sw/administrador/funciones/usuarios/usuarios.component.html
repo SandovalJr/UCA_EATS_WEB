@@ -1,7 +1,11 @@
 <div class="container mt-5">
   <div class="jumbotron">
-    <h2 class="text-left">Clientes registrados</h2>
+    <p class="titulo">Clientes registrados</p>
 
+    <div class="lineas">
+      <div class="LA"></div>
+      <div class="LR"></div>
+    </div>
 
     <div class="form-inline md-form form-sm centrar">
       <span class="iconColor">
@@ -26,12 +30,12 @@
     <table class="table table-hover mt-5">
       <thead>
         <tr>
-          <th scope="col" >Usuario</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Genero</th>
-          <th scope="col">Telefono</th>
-          <th scope="col">Operaciones</th>
+          <th class= "bgt" scope="col">Usuario</th>
+          <th class= "bgt" scope="col">Nombre</th>
+          <th class= "bgt" scope="col">Apellido</th>
+          <th class= "bgt" scope="col">Genero</th>
+          <th class= "bgt" scope="col">Telefono</th>
+          <th class= "bgt" scope="col">Operaciones</th>
         </tr>
       </thead>
       <tbody>
@@ -47,14 +51,14 @@
           <td>{{ users_list.laste_name }}</td>
           <td>{{ users_list.gender }}</td>
           <td>{{ users_list.phone }}</td>
-          <td>
+          <td class="centrarbtn">
             <button class="btn btn-outline-danger mr-2">
               <mat-icon>delete_forever</mat-icon>
             </button>
             <button class="btn btn-outline-warning mr-2">
               <mat-icon>edit</mat-icon>
             </button>
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-info">
               <mat-icon>house</mat-icon>
             </button>
           </td>

@@ -41,7 +41,7 @@ export class UsuariosComponent implements OnInit {
 
     this.auth.ListarClientes().subscribe(
       (usuarios) => {
-        console.log(usuarios);
+        // console.log(usuarios);
         this.UsuariosListados = usuarios;
       },
       (err) => {
