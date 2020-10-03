@@ -52,7 +52,10 @@
           <td class="cr">{{ users_list.gender }}</td>
           <td class="cr">{{ users_list.phone }}</td>
           <td class="centrarbtn">
-            <button class="btn btn-outline-danger mr-2">
+            <button
+              class="btn btn-outline-danger mr-2"
+              (click)="EliminarUsuario(users_list.user_id)"
+            >
               <mat-icon>delete_forever</mat-icon>
             </button>
             <button class="btn btn-outline-warning mr-2">

@@ -138,7 +138,14 @@ export class AuthenticationService {
     });
   }
 
+  // Eliminar un usuario
 
+  public eliminarUsuario(id: any) {
+    console.log(`el id que se eliminara es ${id}`);
+    return this.http.get(`${this.baseUrl}/EliminarUsuario/${id}`, {
+      headers: { Authorization: ` ${this.getToken()}` },
+    });
+  }
 
 
 }
