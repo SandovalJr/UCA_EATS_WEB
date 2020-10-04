@@ -138,7 +138,7 @@ export class AuthenticationService {
 
   // Eliminar un usuario
   public eliminarUsuario(id: any) {
-    console.log(`el id que se eliminara es ${id}`);
+    // console.log(`el id que se eliminara es ${id}`);
     return this.http.get(`${this.baseUrl}/EliminarUsuario/${id}`, {
       headers: { Authorization: ` ${this.getToken()}` },
     });
@@ -146,7 +146,7 @@ export class AuthenticationService {
 
   // Informacion por id de un usuario
   public InfoUserID(id: any) {
-    console.log("la info del " + id);
+    // console.log("la info del " + id);
     return this.http.get(`${this.baseUrl}UserInformation_ID/${id}`, {
       headers: { Authorization: ` ${this.getToken()}` },
     });
