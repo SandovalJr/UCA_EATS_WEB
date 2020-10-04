@@ -150,7 +150,7 @@ users_details.get("/EliminarUsuario/:user_id", (req, res) => {
     });
 });
 
-// Regresar informacion del cliente por id
+// Regresar informacion del cliente por id para act
 users_details.get("/UserInformation_ID/:user_id", (req, res) => {
   User_Detail.findOne({
     where: {
@@ -162,6 +162,34 @@ users_details.get("/UserInformation_ID/:user_id", (req, res) => {
     })
     .catch(function (error) {
       res.status(500).json(error);
+    });
+});
+
+// Actualizar informacion del cliente
+users_details.put("/ActualizacionUsuario/:user_id", (req, res) => {
+  const userData = {
+    username: req.body.username,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    gender: req.body.gender,
+    password: req.body.password,
+    UserType: req.body.UserType,
+    phone: req.body.phone,
+  };
+  // Encriptar clave de nuevo
+  const salt = bcrypt.genSaltSync();
+  userData.password = bcrypt.hashSync(userData.password, salt);
+  
+  User_Detail.update(userData, {
+    where: {
+      user_id: req.params.user_id,
+    },
+  })
+    .then(function (updateUserInfo) {
+      res.status(200).json(updateUserInfo);
+    })
+    .catch(function (error) {
+      res.status(500).json(error + " Ya valio madres no se actualizo");
     });
 });
 
