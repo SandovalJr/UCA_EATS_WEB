@@ -15,6 +15,7 @@ import { AdministradorComponent } from "../components/sw/administrador/administr
 import { MenuInicioAdminComponent } from "../components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
 import { UsuariosComponent } from "../components/sw/administrador/funciones/usuarios/usuarios.component";
 import { CategoriasComponent } from "../components/sw/administrador/funciones/categorias/categorias.component";
+import { UpdateUserComponent } from "../components/sw/administrador/funciones/usuarios/update-user/update-user.component";
 
 // Cliente
 import { ClienteComponent } from "../components/sw/cliente/cliente.component";
@@ -54,8 +55,12 @@ const routes: Routes = [
         component: CategoriasComponent,
         canActivate: [AuthGuardService],
       },
+      {
+        path: "ActualizarUsuario",
+        component: UpdateUserComponent,
+        canActivate: [AuthGuardService],
+      },
     ],
-
   },
 ];
 
