@@ -113,7 +113,7 @@
             }"
             type="password"
             class="form-control"
-            placeholder="Contraseña"
+            placeholder="Ingresa nueva contraseña"
           />
           <div
             *ngIf="ValidarFormulario('password').error"
@@ -145,7 +145,7 @@
       </ng-form>
       <!-- btn -->
       <div class="centrarBtn">
-        <button class="btn2">Actualizar</button>
+        <button class="btn2" (click)="ActualizarUsuario()">Actualizar</button>
       </div>
     </form>
   </div>

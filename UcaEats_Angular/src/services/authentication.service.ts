@@ -151,4 +151,12 @@ export class AuthenticationService {
       headers: { Authorization: ` ${this.getToken()}` },
     });
   }
+
+  // Actualizar Usuario
+  public UpdateUser(id: any, userUpdate: TokenPayload) {
+    return this.http.put(
+      `${this.baseUrl}ActualizacionUsuario/${id}`,
+      userUpdate
+    );
+  }
 }
