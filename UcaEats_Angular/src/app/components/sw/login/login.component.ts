@@ -13,6 +13,10 @@ import {
 } from "@rxweb/reactive-form-validators";
 // servicio
 import { MessageErrorsService } from "../../../../services/messageError.service";
+// SWEETALERT 2
+// declarar variable de esta manera para que no marque err
+declare var require: any;
+const Swal = require("sweetalert2");
 
 @Component({
   selector: "app-login",
@@ -66,8 +70,11 @@ export class LoginComponent implements OnInit {
         // console.log(this.credentials);
       },
       (err) => {
-        this.router.navigateByUrl("/loginError");
-
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Usuario o Clave incorrecta",
+        });
         console.error(err);
       }
     );

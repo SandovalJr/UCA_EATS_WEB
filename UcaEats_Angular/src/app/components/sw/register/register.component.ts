@@ -83,23 +83,31 @@ export class RegisterComponent implements OnInit {
   }
 
   public AddUser() {
-    this.auth.register(this.credentials).subscribe(
-      () => {
-        Swal.fire(
-          "Se Agrego Correctamente",
-          "Presiona para continuar..",
-          "success"
-        );
-        this.router.navigateByUrl(`/LogIn_UcaMeals`);
-      },
-      (err) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Usuario ya existente",
-        });
-        console.error(err);
-      }
-    );
+    if (this.formulario.valid) {
+      this.auth.register(this.credentials).subscribe(
+        () => {
+          Swal.fire(
+            "Se Agrego Correctamente",
+            "Presiona para continuar..",
+            "success"
+          );
+          this.router.navigateByUrl(`/LogIn_UcaMeals`);
+        },
+        (err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Usuario ya existente",
+          });
+          console.error(err);
+        }
+      );
+    } else {
+      Swal.fire({
+        title: "Campos Incompletos!",
+        text: "completa todos para continuar",
+        icon: "warning",
+      });
+    }
   }
 }
