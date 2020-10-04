@@ -1,1 +1,152 @@
-<p>update-user works!</p>
+<div class="container-login100">
+  <div class="jumbotron">
+    <form>
+      <p class="titulo">Actualización de información</p>
+
+      <div class="lineas">
+        <div class="LA"></div>
+        <div class="LR"></div>
+      </div>
+
+      <ng-form [formGroup]="formulario">
+        <span class="login100-form-title p-b-48">
+          <i class="zmdi zmdi-font"></i>
+        </span>
+        <br />
+        <!-- Nombre y Apellido -->
+        <div class="col-12">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre"
+            name="first_name"
+            formControlName="first_name"
+            [(ngModel)]="credentials.first_name"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('first_name').error == false,
+              'is-invalid': ValidarFormulario('first_name').error == true
+            }"
+          />
+          <div
+            *ngIf="ValidarFormulario('first_name').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("first_name").message }}
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Apellido"
+            name="last_name"
+            formControlName="last_name"
+            [(ngModel)]="credentials.last_name"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('last_name').error == false,
+              'is-invalid': ValidarFormulario('last_name').error == true
+            }"
+          />
+          <div
+            *ngIf="ValidarFormulario('last_name').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("last_name").message }}
+          </div>
+        </div>
+
+        <!-- Usuario y genero -->
+
+        <div class="col-12 mt-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Usuario"
+            name="username"
+            formControlName="username"
+            [(ngModel)]="credentials.username"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('username').error == false,
+              'is-invalid': ValidarFormulario('username').error == true
+            }"
+          />
+          <div
+            *ngIf="ValidarFormulario('username').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("username").message }}
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <select
+            name="gender"
+            formControlName="gender"
+            [(ngModel)]="credentials.gender"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('gender').error == false,
+              'is-invalid': ValidarFormulario('gender').error == true
+            }"
+            class="form-control"
+          >
+            <option value="">Selecciona una opcion</option>
+            <option [value]="'M'">Mujer</option>
+            <option [value]="'H'">Hombre</option>
+          </select>
+          <div
+            *ngIf="ValidarFormulario('gender').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("gender").message }}
+          </div>
+        </div>
+
+        <!-- Usuario y genero -->
+
+        <div class="col-12 mt-2">
+          <input
+            name="password"
+            formControlName="password"
+            [(ngModel)]="credentials.password"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('password').error == false,
+              'is-invalid': ValidarFormulario('password').error == true
+            }"
+            type="password"
+            class="form-control"
+            placeholder="Contraseña"
+          />
+          <div
+            *ngIf="ValidarFormulario('password').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("password").message }}
+          </div>
+        </div>
+        <div class="col-12 mt-2">
+          <input
+            type="text"
+            name="phone"
+            formControlName="phone"
+            [(ngModel)]="credentials.phone"
+            [ngClass]="{
+              'is-valid': ValidarFormulario('phone').error == false,
+              'is-invalid': ValidarFormulario('phone').error == true
+            }"
+            class="form-control"
+            placeholder="Telefono"
+          />
+          <div
+            *ngIf="ValidarFormulario('phone').error"
+            class="text-center invalid-feedback d-block"
+          >
+            {{ ValidarFormulario("phone").message }}
+          </div>
+        </div>
+      </ng-form>
+      <!-- btn -->
+      <div class="centrarBtn">
+        <button class="btn2">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

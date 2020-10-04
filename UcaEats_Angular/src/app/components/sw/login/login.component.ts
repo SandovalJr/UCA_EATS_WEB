@@ -20,7 +20,6 @@ import { MessageErrorsService } from "../../../../services/messageError.service"
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-
   credentials: TokenPayload = {
     user_id: 0,
     username: "",
@@ -52,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   public ValidateForm(control: string) {
-    console.log(this.formulario.controls[control].errors);
+    // console.log(this.formulario.controls[control].errors);
     if (!this.formulario.controls[control].touched) return { error: undefined };
 
     return this.MessageErrorSvr.errorMessage(
@@ -64,7 +63,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.credentials).subscribe(
       () => {
         this.router.navigateByUrl("/Inicio_Administrador/Menu_Inicio_Admin");
-        console.log(this.auth.IsAdmin());
+        // console.log(this.credentials);
       },
       (err) => {
         this.router.navigateByUrl("/loginError");
