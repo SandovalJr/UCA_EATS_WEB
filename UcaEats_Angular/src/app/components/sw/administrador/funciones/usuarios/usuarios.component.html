@@ -58,7 +58,10 @@
             >
               <mat-icon>delete_forever</mat-icon>
             </button>
-            <button class="btn btn-outline-warning mr-2">
+            <button
+              class="btn btn-outline-warning mr-2"
+              (click)="goToUpdate(users_list.user_id)"
+            >
               <mat-icon>edit</mat-icon>
             </button>
             <button class="btn btn-outline-info">

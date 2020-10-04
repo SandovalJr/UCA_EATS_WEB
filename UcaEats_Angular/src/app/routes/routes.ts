@@ -56,7 +56,7 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
       },
       {
-        path: "ActualizarUsuario",
+        path: "ActualizarUsuario/:user_id",
         component: UpdateUserComponent,
         canActivate: [AuthGuardService],
       },

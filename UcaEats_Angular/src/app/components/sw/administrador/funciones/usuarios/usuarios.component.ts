@@ -85,6 +85,7 @@ export class UsuariosComponent implements OnInit {
     });
   }
 
-
-
+  goToUpdate(user_id: any) {
+    this.router.navigate([`Inicio_Administrador/ActualizarUsuario/${user_id}`]);
+  }
 }
