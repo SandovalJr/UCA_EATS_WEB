@@ -64,19 +64,27 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.auth.login(this.credentials).subscribe(
-      () => {
-        this.router.navigateByUrl("/Inicio_Administrador/Menu_Inicio_Admin");
-        // console.log(this.credentials);
-      },
-      (err) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Usuario o Clave incorrecta",
-        });
-        console.error(err);
-      }
-    );
+    if (this.formulario.valid) {
+      this.auth.login(this.credentials).subscribe(
+        () => {
+          this.router.navigateByUrl("/Inicio_Administrador/Menu_Inicio_Admin");
+          // console.log(this.credentials);
+        },
+        (err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Usuario o Clave incorrecta",
+          });
+          console.error(err);
+        }
+      );
+    } else {
+      Swal.fire({
+        title: "Campos Incompletos!",
+        text: "completa todos para continuar",
+        icon: "warning",
+      });
+    }
   }
 }
