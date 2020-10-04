@@ -20,14 +20,14 @@ export class AuthGuardService implements CanActivate {
     }
 
     if (
-      route.url[0].path === "Inicio_Administrador/Menu_Inicio_Admin" &&
+      route.url[0].path === "Inicio_Administrador" &&
       this.auth.IsAdmin() === 0
     ) {
       return true;
     }
 
     if (
-      route.url[0].path === "Inicio_Administrador/Menu_Inicio_Admin" &&
+      route.url[0].path === "Inicio_Administrador" &&
       this.auth.IsAdmin() === 7
     ) {
       if (this.auth.IsCliente() === 2) {
