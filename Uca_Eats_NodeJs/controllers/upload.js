@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require('uuid');
 const {response} = require('express');
-
+const { actualizarImagen } = require("../helpers/actualizarImg");
 
 const uploadImg = (req,res = response) =>{
     const tipo = req.params.tipo;
@@ -59,7 +59,7 @@ const uploadImg = (req,res = response) =>{
         }
 
         //Actualizar base de datos
-        // actualizarImagen(tipo, id, nombreArchivo);
+        actualizarImagen(tipo, id, nombreArchivo);
 
         res.json({
             ok: true,
@@ -68,5 +68,10 @@ const uploadImg = (req,res = response) =>{
         });
     });
 }
+
+
+
+
+
 
 module.exports = {uploadImg};
