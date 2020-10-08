@@ -19,7 +19,9 @@ export class MenuInicioAdminComponent implements OnInit {
     this.router.navigate([`Inicio_Administrador/Categorias`]);
   }
 
-
+  goToPlatillos() {
+    this.router.navigate([`Inicio_Administrador/Platillos`]);
+  }
 
 
 
