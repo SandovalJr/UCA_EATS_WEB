@@ -47,7 +47,6 @@ export class CategoriasComponent implements OnInit {
       (data) => {
         this.Categorias = data;
         console.log(this.Categorias);
-
       },
       (err) => {
         Swal.fire({
@@ -58,5 +57,35 @@ export class CategoriasComponent implements OnInit {
         console.error(err);
       }
     );
+  }
+
+  public DelCategory(id: any) {
+    Swal.fire({
+      title: "Seguro que quieres eliminarlo?",
+      text: "No podras volver atras!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#00a441",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.value) {
+        this.cat.EliminarCategory(id).subscribe(
+          (userEliminado) => {
+            // console.log(userEliminado);
+            window.location.reload();
+          },
+          (err) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Algo salio mal!",
+            });
+            console.error(err);
+          }
+        );
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
   }
 }

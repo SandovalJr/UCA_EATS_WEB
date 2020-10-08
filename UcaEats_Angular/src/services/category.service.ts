@@ -35,6 +35,11 @@ export class categorySevice {
     return this.http.get(`${this.baseUrl}CategoryList`);
   }
 
+  // Eliminar categoria
+  public EliminarCategory(id: any) {
+    return this.http.get(`${this.baseUrl}EliminarCategory/${id}`);
+  }
+
   // Regresar la info de una category
   // public InfoCategory()
 }

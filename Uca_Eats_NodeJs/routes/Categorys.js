@@ -43,7 +43,7 @@ categorys.get("/infoCategory/:category_id", (req, res) => {
 categorys.post("/AddCategory", (req, res) => {
   const CategoryData = {
     category_name: req.body.category_name,
-    // img_category: req.body.img_category,
+    img_category: "",
   };
   Category.findOne({
     where: {
@@ -72,5 +72,22 @@ categorys.post("/AddCategory", (req, res) => {
       res.send("error ya existe categoria: " + err);
     });
 });
+
+// Eliminar Categoria
+categorys.get("/EliminarCategory/:category_id", (req, res) => {
+  Category.destroy({
+    where: {
+      category_id: req.params.category_id,
+    },
+  })
+    .then(function (eliminado) {
+      res.status(200).json(eliminado);
+    })
+    .catch(function (error) {
+      res.status(500).json(error);
+    });
+});
+
+
 
 module.exports = categorys;
