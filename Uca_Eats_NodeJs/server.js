@@ -23,6 +23,13 @@ app.use(express.json());
 app.use("/api/user_detail", require("./routes/User_Details"));
 app.use("/api/category", require("./routes/Categorys"));
 app.use("/api/upload", require("./routes/upload.js"));
+app.use("/api/product", require("./routes/Product"));
+
+
+
+
+
+
 
 app.listen(port, function () {
   console.log("Server is running on port: " + port);
