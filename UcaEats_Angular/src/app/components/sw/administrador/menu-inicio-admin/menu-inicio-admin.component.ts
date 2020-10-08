@@ -14,4 +14,13 @@ export class MenuInicioAdminComponent implements OnInit {
   goToUsers() {
     this.router.navigate([`Inicio_Administrador/Usuarios`]);
   }
+
+  goToCategorys() {
+    this.router.navigate([`Inicio_Administrador/Categorias`]);
+  }
+
+
+
+
+
 }
