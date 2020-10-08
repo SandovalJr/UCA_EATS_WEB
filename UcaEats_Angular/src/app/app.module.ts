@@ -28,6 +28,8 @@ import { MatListModule } from "@angular/material/list";
 import { AuthGuardService } from "../services/auth-guard.service";
 import { AuthenticationService } from "../services/authentication.service";
 import { MessageErrorsService } from "../services/messageError.service";
+import { ImageService } from "../services/image.service";
+import { categorySevice } from "../services/category.service";
 
 import { AppComponent } from "./app.component";
 
@@ -50,10 +52,10 @@ import { ClienteComponent } from "./components/sw/cliente/cliente.component";
 import { MenuInicioAdminComponent } from "./components/sw/administrador/menu-inicio-admin/menu-inicio-admin.component";
 import { UsuariosComponent } from "./components/sw/administrador/funciones/usuarios/usuarios.component";
 import { RegisterComponent } from "./components/sw/register/register.component";
-import { ListarDireccionesComponent } from './components/sw/administrador/funciones/usuarios/listar-direcciones/listar-direcciones.component';
-import { CategoriasComponent } from './components/sw/administrador/funciones/categorias/categorias.component';
-import { UpdateUserComponent } from './components/sw/administrador/funciones/usuarios/update-user/update-user.component';
-import { ProductosComponent } from './components/sw/administrador/funciones/productos/productos.component';
+import { ListarDireccionesComponent } from "./components/sw/administrador/funciones/usuarios/listar-direcciones/listar-direcciones.component";
+import { CategoriasComponent } from "./components/sw/administrador/funciones/categorias/categorias.component";
+import { UpdateUserComponent } from "./components/sw/administrador/funciones/usuarios/update-user/update-user.component";
+import { ProductosComponent } from "./components/sw/administrador/funciones/productos/productos.component";
 
 @NgModule({
   declarations: [
@@ -95,7 +97,13 @@ import { ProductosComponent } from './components/sw/administrador/funciones/prod
     Ng2SearchPipeModule,
     NgxPaginationModule,
   ],
-  providers: [MessageErrorsService, AuthenticationService, AuthGuardService],
+  providers: [
+    MessageErrorsService,
+    AuthenticationService,
+    AuthGuardService,
+    categorySevice,
+    ImageService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

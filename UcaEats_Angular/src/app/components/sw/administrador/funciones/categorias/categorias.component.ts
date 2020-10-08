@@ -33,7 +33,30 @@ export class CategoriasComponent implements OnInit {
     category_name: "",
   };
 
-  constructor() {}
+  constructor(private cat: categorySevice) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.CategoriasList();
+  }
+
+  public Categorias;
+
+  public CategoriasList() {
+    this.Categorias = [];
+    this.cat.ListCategory().subscribe(
+      (data) => {
+        this.Categorias = data;
+        console.log(this.Categorias);
+
+      },
+      (err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo salio mal!",
+        });
+        console.error(err);
+      }
+    );
+  }
 }

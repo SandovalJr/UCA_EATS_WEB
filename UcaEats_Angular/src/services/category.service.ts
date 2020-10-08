@@ -30,8 +30,11 @@ export class categorySevice {
     return this.http.post(`${this.baseUrl}AddCategory`, category);
   }
 
-// Regresar la info de una category
-// public InfoCategory()
+  // Listar Categorias
+  public ListCategory() {
+    return this.http.get(`${this.baseUrl}CategoryList`);
+  }
 
-
+  // Regresar la info de una category
+  // public InfoCategory()
 }
