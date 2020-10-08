@@ -17,7 +17,7 @@ export interface CategoryLoad {
 }
 
 @Injectable()
-export class AuthenticationService {
+export class categorySevice {
   private token: string;
   baseUrl = "http://localhost:3000/api/category/";
 
