@@ -22,6 +22,13 @@
 
     align-items: center;
   }
+  .cent {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+  }
 
   .titulo {
     font-family: "Oswald", sans-serif;
@@ -86,3 +93,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.iconColor {
+  background: #8d8989;
+  padding: 5px;
+  border-radius: 7%;
+  padding-left: 10px;
+  padding-right: 10px;
+  // margin-left: 2px;
+}
+
+
+.centinputsearch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

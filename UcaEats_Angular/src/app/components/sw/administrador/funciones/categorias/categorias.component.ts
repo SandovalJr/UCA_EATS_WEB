@@ -27,6 +27,10 @@ const Swal = require("sweetalert2");
 })
 export class CategoriasComponent implements OnInit {
   public formulario: FormGroup;
+  // buscador
+  term: any;
+  // paginador
+  pageActual: number = 1;
 
   credentials: CategoryLoad = {
     category_id: 0,

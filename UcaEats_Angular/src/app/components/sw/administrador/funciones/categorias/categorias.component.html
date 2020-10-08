@@ -27,8 +27,30 @@
         </form> -->
       </div>
     </div>
+
+    <div class="form-inline md-form cent">
+      <span class="iconColor">
+        <mdb-icon
+          fas
+          icon="search"
+          style="color: white"
+          aria-hidden="true"
+        ></mdb-icon>
+      </span>
+      <input
+        [(ngModel)]="term"
+        class="form-control form-control-sm ml-3 w-75"
+        type="text"
+        placeholder="Buscar"
+        aria-describedby="helpId"
+        aria-label="Search"
+        mdbInput
+      />
+    </div>
+
+
     <div class="col-12 centrarC">
-      <div class="mt-5 table-responsive-sm">
+      <div class="table-responsive-sm">
         <table class="table table-hover mt-3">
           <thead>
             <tr>
@@ -38,22 +60,38 @@
             </tr>
           </thead>
           <tbody>
-         <tr *ngFor="let infoCat of Categorias">
-           <td>{{infoCat.	category_name}}</td>
-           <td></td>
-          <td class="centrarbtn">
-            <button class="btn btn-outline-danger mr-2" (click)="DelCategory(infoCat.category_id)">
-              <mat-icon>delete_forever</mat-icon>
-            </button>
-            <button class="btn btn-outline-warning mr-2">
-              <mat-icon>edit</mat-icon>
-            </button>
-
-          </td>
-         </tr>
+            <tr
+              *ngFor="
+                let infoCat of Categorias
+                  | filter: term
+                  | paginate: { itemsPerPage: 8, currentPage: pageActual }
+              "
+            >
+              <td>{{ infoCat.category_name }}</td>
+              <td></td>
+              <td class="centrarbtn">
+                <button
+                  class="btn btn-outline-danger mr-2"
+                  (click)="DelCategory(infoCat.category_id)"
+                >
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+                <button class="btn btn-outline-warning mr-2">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+    </div>
+
+    <div class="mt-4 float-right">
+      <pagination-controls
+        (pageChange)="pageActual = $event"
+        previousLabel="Anterior"
+        nextLabel="Siguiente"
+      ></pagination-controls>
     </div>
   </div>
 </div>
