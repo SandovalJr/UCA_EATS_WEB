@@ -43,7 +43,7 @@ categorys.get("/infoCategory/:category_id", (req, res) => {
 categorys.post("/AddCategory", (req, res) => {
   const CategoryData = {
     category_name: req.body.category_name,
-    img_category: "",
+    img_category: req.body.img_category || "",
   };
   Category.findOne({
     where: {
@@ -87,7 +87,5 @@ categorys.get("/EliminarCategory/:category_id", (req, res) => {
       res.status(500).json(error);
     });
 });
-
-
 
 module.exports = categorys;

@@ -6,7 +6,7 @@ const router = Router();
 router.use(expressFileUpload());
 
 
-router.put("/:tipo/:id", uploadImg)
+router.put("/:tipo/:category_name", uploadImg)
 
 
 

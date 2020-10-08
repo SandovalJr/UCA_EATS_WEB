@@ -26,11 +26,21 @@ export class ImageService {
   constructor(private http: HttpClient, private router: Router) {}
 
   // ADD Img
-  public AddImage(category: any, tipoImg: any, id: any): Observable<any> {
+  public AddImage(
+    Imagen: File,
+    tipoImg: "category" | "products",
+    category_name: any
+  ): Observable<any> {
     // console.log("llego");
-    console.log(category);
-    return this.http.post(`${this.baseUrl}/${tipoImg}/${id}`, category);
+    console.log("SEVICIOOOO");
+
+    const formData = new FormData();
+    formData.append("imagen", Imagen);
+
+    console.log(Imagen);
+    return this.http.put(
+      `${this.baseUrl}/${tipoImg}/${category_name}`,
+      formData
+    );
   }
-
-
 }

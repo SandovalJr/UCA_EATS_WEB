@@ -10,35 +10,58 @@
     <div class="col-12 centrarC">
       <div class="mt-4">
         <form>
-      <ng-form [formGroup]="formulario">
-        <section>
-          <div class="container">
-            <br />
-            <p class="tituloagr">Agregar categoria</p>
-            <input
-              type="text"
-              placeholder="Nombre de categoria"
-              class="form-control"
-              name="category_name"
-              formControlName="category_name"
-              [(ngModel)]="credentials.category_name"
-              [ngClass]="{
-                'is-valid': ValidarFormulario('category_name').error == false,
-                'is-invalid': ValidarFormulario('category_name').error == true
-              }"
-            />
-            <div
-              *ngIf="ValidarFormulario('category_name').error"
-              class="text-center invalid-feedback d-block"
-            >
-              {{ ValidarFormulario("category_name").message }}
-            </div>
-            <input type="file" class="form-control mt-3" />
-            <button class="btn btn-info mt-3">Registrar</button>
-            <br />
-          </div>
-        </section>
-        </ng-form>
+          <ng-form [formGroup]="formulario">
+            <section>
+              <div class="container">
+                <br />
+                <p class="tituloagr">Agregar categoria</p>
+                <input
+                  type="text"
+                  placeholder="Nombre de categoria"
+                  class="form-control"
+                  name="category_name"
+                  formControlName="category_name"
+                  [(ngModel)]="credentials.category_name"
+                  [ngClass]="{
+                    'is-valid':
+                      ValidarFormulario('category_name').error == false,
+                    'is-invalid':
+                      ValidarFormulario('category_name').error == true
+                  }"
+                />
+                <div
+                  *ngIf="ValidarFormulario('category_name').error"
+                  class="text-center invalid-feedback d-block"
+                >
+                  {{ ValidarFormulario("category_name").message }}
+                </div>
+                <input
+                  type="file"
+                  class="form-control mt-3"
+                  name="img_category"
+                  formControlName="img_category"
+                  (change)="CambiarImagen($event.target.files[0])"
+                  [(ngModel)]="credentials.img_category"
+                  [ngClass]="{
+                    'is-valid':
+                      ValidarFormulario('img_category').error == false,
+                    'is-invalid':
+                      ValidarFormulario('img_category').error == true
+                  }"
+                />
+                <div
+                  *ngIf="ValidarFormulario('img_category').error"
+                  class="text-center invalid-feedback d-block"
+                >
+                  {{ ValidarFormulario("img_category").message }}
+                </div>
+                <button class="btn btn-info mt-3" (click)="RegistrarCategory()">
+                  Registrar
+                </button>
+                <br />
+              </div>
+            </section>
+          </ng-form>
         </form>
       </div>
     </div>

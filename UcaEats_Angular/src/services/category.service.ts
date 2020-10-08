@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 export interface CategoryDetails {
   category_id: number;
   category_name: string;
+  img_category: string;
   exp: number;
   iat: number;
 }
@@ -14,6 +15,7 @@ export interface CategoryDetails {
 export interface CategoryLoad {
   category_id: number;
   category_name: string;
+  img_category: string;
 }
 
 @Injectable()

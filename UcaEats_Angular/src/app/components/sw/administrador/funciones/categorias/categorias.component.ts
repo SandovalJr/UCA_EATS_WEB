@@ -14,6 +14,7 @@ import {
 import { MessageErrorsService } from "../../../../../../services/messageError.service";
 import { Router } from "@angular/router";
 import { RxwebValidators } from "@rxweb/reactive-form-validators";
+import { ImageService } from "../../../../../../services/image.service";
 
 // SWEETALERT 2
 // declarar variable de esta manera para que no marque err
@@ -32,14 +33,19 @@ export class CategoriasComponent implements OnInit {
   // paginador
   pageActual: number = 1;
 
+  imgASubir: File;
+
   credentials: CategoryLoad = {
     category_id: 0,
     category_name: "",
+    img_category: "",
   };
 
   constructor(
     private cat: categorySevice,
-    private MessageErrorSvr: MessageErrorsService
+    private router: Router,
+    private MessageErrorSvr: MessageErrorsService,
+    private imgService: ImageService
   ) {}
 
   ngOnInit(): void {
@@ -51,6 +57,7 @@ export class CategoriasComponent implements OnInit {
   public creatForm() {
     this.formulario = new FormGroup({
       category_name: new FormControl(null, [RxwebValidators.required()]),
+      img_category: new FormControl(null, []),
     });
   }
 
@@ -59,6 +66,11 @@ export class CategoriasComponent implements OnInit {
     return this.MessageErrorSvr.errorMessage(
       this.formulario.controls[control].errors
     );
+  }
+
+  public CambiarImagen(file: File) {
+    console.log(file);
+    this.imgASubir = file;
   }
 
   public CategoriasList() {
@@ -107,5 +119,47 @@ export class CategoriasComponent implements OnInit {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });
+  }
+
+  public RegistrarCategory() {
+    if (this.formulario.valid) {
+      this.cat.registerCategory(this.credentials).subscribe(
+        () => {
+          Swal.fire(
+            "Se Agrego Correctamente",
+            "Presiona para continuar..",
+            "success"
+          );
+
+          // window.location.reload();
+          // this.router.navigateByUrl(`/Inicio_Administrador`);
+        },
+        (err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo salio mal!",
+          });
+          console.error(err);
+        }
+      );
+    } else {
+      Swal.fire({
+        title: "Campos Incompletos!",
+        text: "completa todos para continuar",
+        icon: "warning",
+      });
+    }
+
+    this.imgService
+      .AddImage(this.imgASubir, "category", this.credentials.category_name)
+      .subscribe
+      // () => {
+      //   console.log(this.credentials.category_name,tipo,this.formulario.value);
+      // },
+      // (err) => {
+
+      // }
+      ();
   }
 }

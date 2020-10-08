@@ -8,7 +8,7 @@ const { actualizarImagen } = require("../helpers/actualizarImg");
 
 const uploadImg = (req,res = response) =>{
     const tipo = req.params.tipo;
-    const id = req.params.id;
+    const category_name = req.params.category_name;
 
     // //Validar tipo
     const tiposValidos = ['category', 'products'];
@@ -19,6 +19,7 @@ const uploadImg = (req,res = response) =>{
         });
     }
 
+    console.log(req.body);
     //Validar que exista un archivo
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).json({
@@ -59,7 +60,7 @@ const uploadImg = (req,res = response) =>{
         }
 
         //Actualizar base de datos
-        actualizarImagen(tipo, id, nombreArchivo);
+        actualizarImagen(tipo, category_name, nombreArchivo);
 
         res.json({
             ok: true,
