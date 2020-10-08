@@ -6,60 +6,56 @@
       <div class="LA"></div>
       <div class="LR"></div>
     </div>
-
-    <div class="row">
-      <div class="col-12">
-      <div class="col-4 mt-3">
+    <div class="col-12 centrarC">
+      <div class="col-4 mt-4">
         <!-- <form>
-          <ng-form> -->
-            <section>
-              <div class="container">
-                <br />
-                <p class="tituloagr">Agregar categoria</p>
-                <input type="text" placeholder="Nombre de categoria"  class="form-control"/>
-                <button class="btn btn-info mt-3">Registrar</button>
-                <br />
-              </div>
-            </section>
-          <!-- </ng-form>
+      <ng-form> -->
+        <section>
+          <div class="container">
+            <br />
+            <p class="tituloagr">Agregar categoria</p>
+            <input
+              type="text"
+              placeholder="Nombre de categoria"
+              class="form-control"
+            />
+            <button class="btn btn-info mt-3">Registrar</button>
+            <br />
+          </div>
+        </section>
+        <!-- </ng-form>
         </form> -->
       </div>
-
-
-      <div class="col-8">
+    </div>
+    <div class="col-12 centrarC">
+      <div class="col-8 mt-5">
         <table class="table table-hover mt-3">
-            <thead>
-              <tr>
-                <th class="bgt" scope="col">Categorias registradas</th>
-
-              </tr>
-            </thead>
-            <tbody>
-
-                <td class="centrarbtn">
-                  <button
-                    class="btn btn-outline-danger mr-2"
-
-                  >
-                    <mat-icon>delete_forever</mat-icon>
-                  </button>
-                  <button
-                    class="btn btn-outline-warning mr-2"
-
-                  >
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button class="btn btn-outline-info">
-                    <mat-icon>house</mat-icon>
-                  </button>
-                </td>
-
-            </tbody>
-          </table>
-
-
+          <thead>
+            <tr>
+              <th class="bgt" scope="col">Categoria</th>
+              <th class="bgt" scope="col">Imagen</th>
+              <th class="bgt" scope="col">Operaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+         <tr *ngFor="let infoCat of Categorias">
+           <td>{{infoCat.	category_name}}</td>
+           <td></td>
+          <td class="centrarbtn">
+            <button class="btn btn-outline-danger mr-2">
+              <mat-icon>delete_forever</mat-icon>
+            </button>
+            <button class="btn btn-outline-warning mr-2">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button class="btn btn-outline-info">
+              <mat-icon>house</mat-icon>
+            </button>
+          </td>
+         </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
   </div>
 </div>
