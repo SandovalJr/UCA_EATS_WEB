@@ -1,68 +1,52 @@
 <div class="container mt-5">
-    <div class="jumbotron">
-      <p class="titulo">Categorias</p>
+  <div class="jumbotron">
+    <p class="titulo">Categorias</p>
 
-      <div class="lineas">
-        <div class="LA"></div>
-        <div class="LR"></div>
+    <div class="lineas">
+      <div class="LA"></div>
+      <div class="LR"></div>
+    </div>
+
+    <div class="row">
+
+
+      <div class="col-4 mt-3">
+        <form>
+          <section>
+            <div class="container">
+              <br />
+              <p class="tituloagr">Agregar categoria</p>
+              <input type="text" placeholder="Nombre de categoria" />
+              <button class="btn btn-info mt-3">Registrar</button>
+              <br />
+            </div>
+          </section>
+        </form>
       </div>
-
-
-      <div class="row">
-
-        <div class="col-4 mt-3">
-
-            <section>
-                <div class="container">
-                    <br>
-                    <p class="tituloagr">Agregar categoria</p>
-                    <input type="text" placeholder="Nombre de categoria">
-                  <button class="btn btn-info mt-3" >Registrar</button>
-                  <br>
-                </div>
-              </section>
-
-
-        </div>
 
 
       <div class="col-8">
         <table class="table table-hover mt-3">
-            <thead>
-              <tr>
-                <th class="bgt" scope="col">Categorias registradas</th>
-
-              </tr>
-            </thead>
-            <tbody>
-
-                <td class="centrarbtn">
-                  <button
-                    class="btn btn-outline-danger mr-2"
-
-                  >
-                    <mat-icon>delete_forever</mat-icon>
-                  </button>
-                  <button
-                    class="btn btn-outline-warning mr-2"
-
-                  >
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button class="btn btn-outline-info">
-                    <mat-icon>house</mat-icon>
-                  </button>
-                </td>
-
-            </tbody>
-          </table>
-
+          <thead>
+            <tr>
+              <th class="bgt" scope="col">Categorias registradas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td class="centrarbtn">
+              <button class="btn btn-outline-danger mr-2">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+              <button class="btn btn-outline-warning mr-2">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button class="btn btn-outline-info">
+                <mat-icon>house</mat-icon>
+              </button>
+            </td>
+          </tbody>
+        </table>
       </div>
-
-
-      </div>
-
-
     </div>
   </div>
-
+</div>

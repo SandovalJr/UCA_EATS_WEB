@@ -53,6 +53,7 @@ import { RegisterComponent } from "./components/sw/register/register.component";
 import { ListarDireccionesComponent } from './components/sw/administrador/funciones/usuarios/listar-direcciones/listar-direcciones.component';
 import { CategoriasComponent } from './components/sw/administrador/funciones/categorias/categorias.component';
 import { UpdateUserComponent } from './components/sw/administrador/funciones/usuarios/update-user/update-user.component';
+import { ProductosComponent } from './components/sw/administrador/funciones/productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { UpdateUserComponent } from './components/sw/administrador/funciones/usu
     ListarDireccionesComponent,
     CategoriasComponent,
     UpdateUserComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
