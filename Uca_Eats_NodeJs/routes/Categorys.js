@@ -24,8 +24,53 @@ categorys.get("/CategoryList", (req, res) => {
     });
 });
 
+// Informacion de una categoria
+categorys.get("/infoCategory/:category_id", (req, res) => {
+  Category.findOne({
+    where: {
+      category_id: req.params.category_id,
+    },
+  })
+    .then(function (categorias) {
+      res.status(200).json(categorias);
+    })
+    .catch(function (error) {
+      res.status(500).json(error);
+    });
+});
 
-
-
+// Agregar Categoria
+categorys.post("/AddCategory", (req, res) => {
+  const CategoryData = {
+    category_name: req.body.category_name,
+    // img_category: req.body.img_category,
+  };
+  Category.findOne({
+    where: {
+      category_name: req.body.category_name,
+    },
+  })
+    //TODO bcrypt
+    .then((categoria) => {
+      if (!categoria) {
+        console.log(categoria);
+        Category.create(CategoryData)
+          .then(function (NewCategory) {
+            res.status(200).json(NewCategory);
+          })
+          .catch(function (error) {
+            res.status(500).json(error);
+          });
+      } else {
+        return res.status(500).json({
+          ok: false,
+          err,
+        });
+      }
+    })
+    .catch((err) => {
+      res.send("error ya existe categoria: " + err);
+    });
+});
 
 module.exports = categorys;
