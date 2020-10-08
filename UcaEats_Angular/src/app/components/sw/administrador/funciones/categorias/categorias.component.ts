@@ -131,8 +131,8 @@ export class CategoriasComponent implements OnInit {
             "success"
           );
 
-          // window.location.reload();
-          // this.router.navigateByUrl(`/Inicio_Administrador`);
+          window.location.reload();
+
         },
         (err) => {
           Swal.fire({
