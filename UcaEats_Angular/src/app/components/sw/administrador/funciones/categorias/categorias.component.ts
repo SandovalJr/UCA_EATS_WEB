@@ -37,13 +37,29 @@ export class CategoriasComponent implements OnInit {
     category_name: "",
   };
 
-  constructor(private cat: categorySevice) {}
+  constructor(
+    private cat: categorySevice,
+    private MessageErrorSvr: MessageErrorsService
+  ) {}
 
   ngOnInit(): void {
     this.CategoriasList();
+    this.creatForm();
   }
 
   public Categorias;
+  public creatForm() {
+    this.formulario = new FormGroup({
+      category_name: new FormControl(null, [RxwebValidators.required()]),
+    });
+  }
+
+  public ValidarFormulario(control: string) {
+    if (!this.formulario.controls[control].touched) return { error: undefined };
+    return this.MessageErrorSvr.errorMessage(
+      this.formulario.controls[control].errors
+    );
+  }
 
   public CategoriasList() {
     this.Categorias = [];
